@@ -4,5 +4,6 @@
         "rust/paasio/Cargo.toml",
         "rust/simple-linked-list/Cargo.toml",
         "rust/fizzy/Cargo.toml",
+        "rust/robot-name/Cargo.toml",
     ]
 }
