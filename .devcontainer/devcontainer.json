@@ -13,10 +13,11 @@
         "settings": {
             "editor.formatOnSave": true,
             "[rust]": {
-                "editor.defaultFormatter": "rust-analyzer"
+                "editor.defaultFormatter": "rust-lang.rust-analyzer"
             },
+            "rust-analyzer.checkOnSave.command": "clippy",
             "editor.codeActionsOnSave": {
-                "source.organizeImports": true
+                "source.organizeImports": "always"
             },
             "files.readonlyInclude": {
                 "**/.cargo/registry/src/**/*.rs": true,
