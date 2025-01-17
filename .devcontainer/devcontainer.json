@@ -6,7 +6,7 @@
     "customizations": {
         "extensions": [
             "rust-lang.rust",
-            "matklad.rust-analyzer",
+            "rust-lang.rust-analyzer",
             "github.copilot-chat",
             "github.copilot"
         ],
@@ -30,5 +30,5 @@
     "remoteEnv": {
         "EXERCISM_TOKEN": "${localEnv:EXERCISM_TOKEN}"
     },
-    "postCreateCommand": "set -a && . /workspace/.env && set +a && exercism configure --token=$EXERCISM_TOKEN --workspace /workspaces/exorcism"
+    "postCreateCommand": "set -a && . /workspace/.env && set +a && exercism configure --token=$EXERCISM_TOKEN --workspace /workspaces/exercism"
 }
