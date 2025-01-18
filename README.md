@@ -25,7 +25,7 @@ This repository contains my solutions to various [Exercism](https://exercism.org
 | 17 | [Binary Search](./rust/binary-search) | [lib.rs](./rust/binary-search/src/lib.rs) | Algorithms, Arrays | 🔄 |
 | 18 | [ETL](./rust/etl) | [lib.rs](./rust/etl/src/lib.rs) | Data transformation, Collections | 🔄 |
 | 19 | [Grade School](./rust/grade-school) | [lib.rs](./rust/grade-school/src/lib.rs) | HashMaps, Sorting | 🔄 |
-| 20 | [Hamming](./rust/hamming) | [lib.rs](./rust/hamming/src/lib.rs) | Iterator, Error handling | 🔄 |
+| 20 | [Hamming](./rust/hamming) | [lib.rs](./rust/hamming/src/lib.rs) | Itzerator, Error handling | 🔄 |
 | 21 | [Isogram](./rust/isogram) | [lib.rs](./rust/isogram/src/lib.rs) | HashSet, Chars | 🔄 |
 | 22 | [Nucleotide Count](./rust/nucleotide-count) | [lib.rs](./rust/nucleotide-count/src/lib.rs) | HashMap, Error handling | 🔄 |
 | 23 | [Macros](./rust/macros) | [lib.rs](./rust/macros/src/lib.rs) | Macro rules, Metaprogramming | 🔄 |
@@ -43,6 +43,17 @@ cd rust/<exercise-name>
 cargo test -- --include-ignored
 ```
 
-## License
+## Helper Utilities
 
-This repository is licensed under the terms of the MIT license.
+### next.sh - Exercise Download Helper
+
+A convenience script that automates downloading the next exercise:
+- Scans this README.md to find the first exercise marked as in-progress (🔄)
+- Checks if the exercise already exists locally
+- Downloads the exercise using exercism CLI if not present
+- Uses the configured exercism workspace path
+
+Usage:
+```bash
+./next.sh
+```
