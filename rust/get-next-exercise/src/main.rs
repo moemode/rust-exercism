@@ -1,6 +1,7 @@
-use std::fs::read_to_string;
+use std::fs::{self, read_to_string};
 use std::path::Path;
 use std::process::Command;
+use std::error::Error;
 
 fn get_exercism_workspace() -> Option<String> {
     let output = Command::new("exercism")
@@ -13,17 +14,19 @@ fn get_exercism_workspace() -> Option<String> {
         .map(|s| s.trim().to_string())
 }
 
+fn format_exercise_name(name: &str) -> String {
+    name.to_lowercase().replace(' ', "-")
+}
+
 fn get_next_exercise() -> Option<String> {
     let workspace = get_exercism_workspace()?;
     let content = read_to_string(format!("{}/README.md", workspace)).ok()?;
     
-    // Find lines containing "🔄" and extract exercise name
     for line in content.lines() {
         if line.contains("🔄") {
-            // Extract exercise name from markdown table format
             if let Some(exercise_name) = line
                 .split('|')
-                .nth(2)  // Third column contains [Exercise Name](./rust/exercise-name)
+                .nth(2)
                 .and_then(|col| {
                     col.trim()
                         .split(']')
@@ -31,11 +34,39 @@ fn get_next_exercise() -> Option<String> {
                         .map(|s| s.trim_start_matches('['))
                 })
             {
-                return Some(exercise_name.to_string());
+                return Some(format_exercise_name(exercise_name));
             }
         }
     }
     None
+}
+
+fn update_vscode_settings(workspace: &str, exercise: &str) -> Result<(), Box<dyn Error>> {
+    let settings_path = format!("{}/.vscode/settings.json", workspace);
+    let content = read_to_string(&settings_path)?;
+    
+    // Parse the JSON content
+    let mut lines: Vec<String> = content.lines().map(String::from).collect();
+    
+    // Find the last project entry
+    let insert_pos = lines.iter()
+        .position(|line| line.contains("rust-analyzer.linkedProjects"))
+        .map(|pos| {
+            lines.iter()
+                .skip(pos)
+                .position(|line| line.contains("]"))
+                .map(|end| pos + end)
+        })
+        .flatten()
+        .ok_or("Could not find insert position")?;
+
+    // Insert new project before the closing bracket
+    let new_project = format!("        \"rust/{}/Cargo.toml\",", exercise.to_lowercase());
+    lines.insert(insert_pos, new_project);
+
+    // Write back to file
+    fs::write(settings_path, lines.join("\n"))?;
+    Ok(())
 }
 
 fn main() {
@@ -52,13 +83,16 @@ fn main() {
             println!("Next exercise to work on: {}", exercise);
             
             // Check if exercise directory already exists
-            let exercise_path = format!("{}/rust/{}", workspace, exercise.to_lowercase());
+            let exercise_path = format!("{}/rust/{}", workspace, exercise);
             if Path::new(&exercise_path).exists() {
                 println!("Exercise directory {} already exists, skipping download", exercise);
                 return;
             }
             
-            // Launch exercism download command
+            // Print and launch exercism download command
+            let command = format!("exercism download --track=rust --exercise={}", exercise);
+            println!("Running: {}", command);
+            
             let status = Command::new("exercism")
                 .args(["download", "--track=rust", &format!("--exercise={}", exercise)])
                 .status();
@@ -67,6 +101,10 @@ fn main() {
                 Ok(exit_status) => {
                     if exit_status.success() {
                         println!("Successfully downloaded {}", exercise);
+                        // Update VS Code settings after successful download
+                        if let Err(e) = update_vscode_settings(&workspace, &exercise) {
+                            eprintln!("Failed to update VS Code settings: {}", e);
+                        }
                     } else {
                         eprintln!("Failed to download exercise");
                     }
