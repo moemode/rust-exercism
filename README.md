@@ -18,16 +18,23 @@ This repository contains my solutions to various [Exercism](https://exercism.org
 | 10 | [Grep](./rust/grep) | [lib.rs](./rust/grep/src/lib.rs) | File I/O, Regular expressions | 🔄 |
 | 11 | [Luhn](./rust/luhn) | [lib.rs](./rust/luhn/src/lib.rs) | String parsing, Algorithms | 🔄 |
 | 12 | [Luhn From](./rust/luhn-from) | [lib.rs](./rust/luhn-from/src/lib.rs) | Traits, From/Into | 🔄 |
-| 13 | [Luhn Trait](./rust/luhn-trait) | [lib.rs](./rust/luhn-trait/src/lib.rs) | Trait implementation | 🔄 |
-| 14 | [Clock](./rust/clock) | [lib.rs](./rust/clock/src/lib.rs) | Arithmetic, Display trait | 🔄 |
-| 15 | [Space Age](./rust/space-age) | [lib.rs](./rust/space-age/src/lib.rs) | Traits, Float arithmetic | 🔄 |
-| 16 | [Sublist](./rust/sublist) | [lib.rs](./rust/sublist/src/lib.rs) | Generics, List operations | 🔄 |
-| 17 | [Binary Search](./rust/binary-search) | [lib.rs](./rust/binary-search/src/lib.rs) | Algorithms, Arrays | 🔄 |
-| 18 | [ETL](./rust/etl) | [lib.rs](./rust/etl/src/lib.rs) | Data transformation, Collections | 🔄 |
-| 19 | [Grade School](./rust/grade-school) | [lib.rs](./rust/grade-school/src/lib.rs) | HashMaps, Sorting | 🔄 |
-| 20 | [Hamming](./rust/hamming) | [lib.rs](./rust/hamming/src/lib.rs) | Iterator, Error handling | 🔄 |
-| 21 | [Isogram](./rust/isogram) | [lib.rs](./rust/isogram/src/lib.rs) | HashSet, Chars | 🔄 |
-| 22 | [Nucleotide Count](./rust/nucleotide-count) | [lib.rs](./rust/nucleotide-count/src/lib.rs) | HashMap, Error handling | 🔄 |
+| 13 | [Luhn Trait](./rust/luhn-trait/src/lib.rs) | Trait implementation | 🔄 |
+| 14 | [Clock](./rust/clock/src/lib.rs) | Arithmetic, Display trait | 🔄 |
+| 15 | [Space Age](./rust/space-age/src/lib.rs) | Traits, Float arithmetic | 🔄 |
+| 16 | [Sublist](./rust/sublist/src/lib.rs) | Generics, List operations | 🔄 |
+| 17 | [Binary Search](./rust/binary-search/src/lib.rs) | Algorithms, Arrays | 🔄 |
+| 18 | [ETL](./rust/etl/src/lib.rs) | Data transformation, Collections | 🔄 |
+| 19 | [Grade School](./rust/grade-school/src/lib.rs) | HashMaps, Sorting | 🔄 |
+| 20 | [Hamming](./rust/hamming/src/lib.rs) | Iterator, Error handling | 🔄 |
+| 21 | [Isogram](./rust/isogram/src/lib.rs) | HashSet, Chars | 🔄 |
+| 22 | [Nucleotide Count](./rust/nucleotide-count/src/lib.rs) | HashMap, Error handling | 🔄 |
+| 23 | [Macros](./rust/macros/src/lib.rs) | Macro rules, Metaprogramming | 🔄 |
+| 24 | [Parallel Letter Frequency](./rust/parallel-letter-frequency/src/lib.rs) | Concurrency, Threading | 🔄 |
+| 25 | [Xorcism](./rust/xorcism/src/lib.rs) | Iterators, Bit manipulation | 🔄 |
+| 26 | [React](./rust/react/src/lib.rs) | Observer pattern, Cell types | 🔄 |
+| 27 | [Circular Buffer](./rust/circular-buffer/src/lib.rs) | Ring buffer, Error handling | 🔄 |
+| 28 | [Forth](./rust/forth/src/lib.rs) | Interpreters, Stack-based | 🔄 |
+| 29 | [Doubly Linked List](./rust/doubly-linked-list/src/lib.rs) | Unsafe Rust, Pointers | 🔄 |
 
 ## Running Tests
 
