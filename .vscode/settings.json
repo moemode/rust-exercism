@@ -8,5 +8,6 @@
         "rust/triangle/Cargo.toml",
         "rust/robot-simulator/Cargo.toml",
         "rust/accumulate/Cargo.toml",
+        "rust/word-count/Cargo.toml",
     ]
 }

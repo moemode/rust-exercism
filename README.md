@@ -13,8 +13,8 @@ This repository contains my solutions to various [Exercism](https://exercism.org
 | 5 | [Fizzy](./rust/fizzy) | [lib.rs](./rust/fizzy/src/lib.rs) | Iterator adaptation, Generics, Trait bounds | ✅ |
 | 6 | [Triangle](./rust/triangle) | [lib.rs](./rust/triangle/src/lib.rs) | Pattern matching, Geometry | ✅ |
 | 7 | [Robot Simulator](./rust/robot-simulator) | [lib.rs](./rust/robot-simulator/src/lib.rs) | State machines, Enums | ✅ |
-| 8 | [Accumulate](./rust/accumulate) | [lib.rs](./rust/accumulate/src/lib.rs) | Higher-order functions, Iterators | 🔄 |
-| 9 | [Word Count](./rust/word-count) | [lib.rs](./rust/word-count/src/lib.rs) | String manipulation, HashMap | 🔄 |
+| 8 | [Accumulate](./rust/accumulate) | [lib.rs](./rust/accumulate/src/lib.rs) | Higher-order functions, Iterators | ✅ |
+| 9 | [Word Count](./rust/word-count) | [lib.rs](./rust/word-count/src/lib.rs) | String manipulation, HashMap | ✅ |
 | 10 | [Grep](./rust/grep) | [lib.rs](./rust/grep/src/lib.rs) | File I/O, Regular expressions | 🔄 |
 | 11 | [Luhn](./rust/luhn) | [lib.rs](./rust/luhn/src/lib.rs) | String parsing, Algorithms | 🔄 |
 | 12 | [Luhn From](./rust/luhn-from) | [lib.rs](./rust/luhn-from/src/lib.rs) | Traits, From/Into | 🔄 |
