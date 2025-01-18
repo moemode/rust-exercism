@@ -12,7 +12,7 @@ pub enum Direction {
 impl Direction {
     fn turn_right(&self) -> Self {
         let v: (i8, i8) = self.into();
-        (v.1, -v.0).try_into().unwrap()       
+        (v.1, -v.0).try_into().unwrap()
     }
 
     fn turn_left(&self) -> Self {
@@ -33,7 +33,7 @@ impl Into<(i8, i8)> for &Direction {
 }
 
 impl TryFrom<(i8, i8)> for Direction {
-    type Error=String;
+    type Error = String;
     fn try_from(value: (i8, i8)) -> Result<Self, Self::Error> {
         match value {
             (0, 1) => Ok(Direction::North),
@@ -58,18 +58,30 @@ impl Robot {
 
     #[must_use]
     pub fn turn_right(self) -> Self {
-        Robot { x: self.x, y: self.y, direction: self.direction.turn_right() }
+        Robot {
+            x: self.x,
+            y: self.y,
+            direction: self.direction.turn_right(),
+        }
     }
 
     #[must_use]
     pub fn turn_left(self) -> Self {
-        Robot { x: self.x, y: self.y, direction: self.direction.turn_left() }
+        Robot {
+            x: self.x,
+            y: self.y,
+            direction: self.direction.turn_left(),
+        }
     }
 
     #[must_use]
     pub fn advance(self) -> Self {
         let dir_v: (i8, i8) = (&self.direction).into();
-        Robot { x: self.x + dir_v.0 as i32, y: self.y + dir_v.1 as i32, direction: self.direction }
+        Robot {
+            x: self.x + dir_v.0 as i32,
+            y: self.y + dir_v.1 as i32,
+            direction: self.direction,
+        }
     }
 
     #[must_use]
@@ -85,7 +97,6 @@ impl Robot {
         }
         r
     }
-
 
     pub fn position(&self) -> (i32, i32) {
         (self.x, self.y)
