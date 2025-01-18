@@ -6,5 +6,6 @@
         "rust/fizzy/Cargo.toml",
         "rust/robot-name/Cargo.toml",
         "rust/triangle/Cargo.toml",
+        "rust/robot-simulator/Cargo.toml",
     ]
 }
