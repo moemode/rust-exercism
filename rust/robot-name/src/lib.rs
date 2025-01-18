@@ -1,10 +1,26 @@
-use std::{cell::{RefCell}, collections::HashSet };
+use core::panic;
 use rand::Rng;
+use std::cell::RefCell;
 
 pub struct Robot(String);
 
 thread_local! {
-    static USED_NAMES: RefCell<HashSet<String>> = RefCell::new(HashSet::new());
+    static AVAILABLE_NAMES: RefCell<Vec<String>> = {
+        let mut v = Vec::with_capacity(26*26*1000);
+        for ch1 in 'A'..='Z' {
+            for ch2 in 'A'..='Z' {
+                for ch3 in '0'..='9' {
+                    for ch4 in '0'..='9' {
+                        for ch5 in '0'..='9' {
+                            let name = format!("{}{}{}{}{}", ch1,ch2,ch3,ch4,ch5);
+                            v.push(name);
+                        }
+                    }
+                }
+            }
+        }
+        RefCell::new(v)
+    };
 }
 
 impl Robot {
@@ -14,33 +30,25 @@ impl Robot {
         r
     }
 
-    fn generate_name() -> String {
-        let mut rng = rand::thread_rng();
-        let letter1 = (rng.gen_range('A'..='Z')) as char;
-        let letter2 = (rng.gen_range('A'..='Z')) as char;
-        let digits = rng.gen_range(0..1000);
-        format!("{}{}{:03}", letter1, letter2, digits)
-    }
-
     fn assign_unique_name(&mut self) {
-        let mut unique = Self::generate_name();
-        USED_NAMES.with_borrow_mut(|set| {
-            while set.contains(&unique) {
-                unique = Self::generate_name();
+        self.0 = AVAILABLE_NAMES.with_borrow_mut(|names| {
+            if names.len() == 0 {
+                panic!("No more names available");
             }
-            set.insert(unique.clone());
+            let name_index = rand::thread_rng().gen_range(0..names.len());
+            names.swap_remove(name_index)
         });
-        self.0 = unique;
     }
 
     pub fn reset_name(&mut self) {
         let old_name = self.0.clone();
         self.assign_unique_name();
-        USED_NAMES.with_borrow_mut(|set| set.remove(&old_name));
+        AVAILABLE_NAMES.with_borrow_mut(|names| {
+            names.push(old_name);
+        });
     }
 
     pub fn name(&self) -> &str {
         &self.0
     }
-
 }
