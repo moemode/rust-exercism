@@ -8,4 +8,3 @@ new_without_default = "allow"
 
 [dependencies]
 rand = "0.8"
-lazy_static = "1.4.0"

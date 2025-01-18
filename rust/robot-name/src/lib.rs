@@ -1,11 +1,10 @@
-use std::{collections::HashSet, sync::Mutex};
-use lazy_static::lazy_static;
+use std::{cell::{RefCell}, collections::HashSet };
 use rand::Rng;
 
 pub struct Robot(String);
 
-lazy_static! {
-    static ref USED_NAMES: Mutex<HashSet<String>> = Mutex::new(HashSet::new());
+thread_local! {
+    static USED_NAMES: RefCell<HashSet<String>> = RefCell::new(HashSet::new());
 }
 
 impl Robot {
@@ -25,19 +24,19 @@ impl Robot {
 
     fn assign_unique_name(&mut self) {
         let mut unique = Self::generate_name();
-        let mut set = USED_NAMES.lock().unwrap();
-        while set.contains(&unique) {
-            unique = Self::generate_name();
-        }
-        set.insert(unique.clone());
+        USED_NAMES.with_borrow_mut(|set| {
+            while set.contains(&unique) {
+                unique = Self::generate_name();
+            }
+            set.insert(unique.clone());
+        });
         self.0 = unique;
     }
 
     pub fn reset_name(&mut self) {
         let old_name = self.0.clone();
         self.assign_unique_name();
-        let mut set = USED_NAMES.lock().unwrap();
-        set.remove(&old_name);
+        USED_NAMES.with_borrow_mut(|set| set.remove(&old_name));
     }
 
     pub fn name(&self) -> &str {
