@@ -52,3 +52,11 @@ impl Robot {
         &self.0
     }
 }
+
+impl Drop for Robot {
+    fn drop(&mut self) {
+        AVAILABLE_NAMES.with_borrow_mut(|names| {
+            names.push(self.0.clone());
+        })
+    }
+}
