@@ -9,5 +9,6 @@
         "rust/robot-simulator/Cargo.toml",
         "rust/accumulate/Cargo.toml",
         "rust/word-count/Cargo.toml",
+        "rust/grep/Cargo.toml",
     ]
 }
