@@ -46,20 +46,14 @@ impl Luhn {
     }
 }
 
-/// Here is the example of how the From trait could be implemented
-/// for the &str type. Naturally, you can implement this trait
-/// by hand for every other type presented in the test suite,
-/// but your solution will fail if a new type is presented.
-/// Perhaps there exists a better solution for this problem?
-impl<S> From<S> for Luhn
-where
-    S: Display,
-{
+impl<S: Display> From<S> for Luhn {
     fn from(input: S) -> Self {
         Luhn::new(input.to_string().as_str())
     }
 }
+
 /*
+/// implementation for number types, unfortunately incompatible with the &str implementation
 impl<N> From<N> for Luhn
 where
     N: Integer + Copy + From<u8> + TryInto<u8> + DivAssign + Rem<Output = N> + Zero,

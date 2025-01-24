@@ -18,7 +18,7 @@ This repository contains my solutions to various [Exercism](https://exercism.org
 | 10 | [Grep](./rust/grep) | [lib.rs](./rust/grep/src/lib.rs) | File I/O, Regular expressions | ✅ |
 | 11 | [Luhn](./rust/luhn) | [lib.rs](./rust/luhn/src/lib.rs) | String parsing, Algorithms | ✅ |
 | 12 | [Luhn From](./rust/luhn-from) | [lib.rs](./rust/luhn-from/src/lib.rs) | Traits, From/Into | ✅ |
-| 13 | [Luhn Trait](./rust/luhn-trait) | [lib.rs](./rust/luhn-trait/src/lib.rs) | Trait implementation | 🔄 |
+| 13 | [Luhn Trait](./rust/luhn-trait) | [lib.rs](./rust/luhn-trait/src/lib.rs) | Trait implementation | ✅ |
 | 14 | [Clock](./rust/clock) | [lib.rs](./rust/clock/src/lib.rs) | Arithmetic, Display trait | 🔄 |
 | 15 | [Space Age](./rust/space-age) | [lib.rs](./rust/space-age/src/lib.rs) | Traits, Float arithmetic | 🔄 |
 | 16 | [Sublist](./rust/sublist) | [lib.rs](./rust/sublist/src/lib.rs) | Generics, List operations | 🔄 |

@@ -12,5 +12,6 @@
         "rust/grep/Cargo.toml",
         "rust/luhn/Cargo.toml",
         "rust/luhn-from/Cargo.toml",
+        "rust/luhn-trait/Cargo.toml",
     ],
 }
