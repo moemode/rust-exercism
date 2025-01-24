@@ -10,5 +10,7 @@
         "rust/accumulate/Cargo.toml",
         "rust/word-count/Cargo.toml",
         "rust/grep/Cargo.toml",
-    ]
+        "rust/luhn/Cargo.toml",
+        "rust/luhn-from/Cargo.toml",
+    ],
 }
