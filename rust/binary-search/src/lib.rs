@@ -1,4 +1,5 @@
-pub fn find(array: &[i32], key: i32) -> Option<usize> {
+pub fn find<U: AsRef<[T]>, T: Ord>(array: U, key: T) -> Option<usize> {
+    let array = array.as_ref();
     let (mut l, mut r) = (0, array.len());
     while l < r {
         let mid = (l + r) / 2;
