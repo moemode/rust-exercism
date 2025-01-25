@@ -20,7 +20,7 @@ This repository contains my solutions to various [Exercism](https://exercism.org
 | 12 | [Luhn From](./rust/luhn-from) | [lib.rs](./rust/luhn-from/src/lib.rs) | Traits, From/Into | ✅ |
 | 13 | [Luhn Trait](./rust/luhn-trait) | [lib.rs](./rust/luhn-trait/src/lib.rs) | Trait implementation | ✅ |
 | 14 | [Clock](./rust/clock) | [lib.rs](./rust/clock/src/lib.rs) | Arithmetic, Display trait | ✅ |
-| 15 | [Space Age](./rust/space-age) | [lib.rs](./rust/space-age/src/lib.rs) | Traits, Float arithmetic | 🔄 |
+| 15 | [Space Age](./rust/space-age) | [lib.rs](./rust/space-age/src/lib.rs) | Traits, Float arithmetic | ✅ |
 | 16 | [Sublist](./rust/sublist) | [lib.rs](./rust/sublist/src/lib.rs) | Generics, List operations | 🔄 |
 | 17 | [Binary Search](./rust/binary-search) | [lib.rs](./rust/binary-search/src/lib.rs) | Algorithms, Arrays | 🔄 |
 | 18 | [ETL](./rust/etl) | [lib.rs](./rust/etl/src/lib.rs) | Data transformation, Collections | 🔄 |
