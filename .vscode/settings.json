@@ -16,5 +16,6 @@
         "rust/clock/Cargo.toml",
         "rust/space-age/Cargo.toml",
         "rust/sublist/Cargo.toml",
+        "rust/binary-search/Cargo.toml",
     ],
 }

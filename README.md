@@ -22,7 +22,7 @@ This repository contains my solutions to various [Exercism](https://exercism.org
 | 14 | [Clock](./rust/clock) | [lib.rs](./rust/clock/src/lib.rs) | Arithmetic, Display trait | ✅ |
 | 15 | [Space Age](./rust/space-age) | [lib.rs](./rust/space-age/src/lib.rs) | Traits, Float arithmetic | ✅ |
 | 16 | [Sublist](./rust/sublist) | [lib.rs](./rust/sublist/src/lib.rs) | Generics, List operations | ✅ |
-| 17 | [Binary Search](./rust/binary-search) | [lib.rs](./rust/binary-search/src/lib.rs) | Algorithms, Arrays | 🔄 |
+| 17 | [Binary Search](./rust/binary-search) | [lib.rs](./rust/binary-search/src/lib.rs) | Algorithms, Arrays | ✅ |
 | 18 | [ETL](./rust/etl) | [lib.rs](./rust/etl/src/lib.rs) | Data transformation, Collections | 🔄 |
 | 19 | [Grade School](./rust/grade-school) | [lib.rs](./rust/grade-school/src/lib.rs) | HashMaps, Sorting | 🔄 |
 | 20 | [Hamming](./rust/hamming) | [lib.rs](./rust/hamming/src/lib.rs) | Iterator, Error handling | 🔄 |
