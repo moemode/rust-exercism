@@ -89,39 +89,6 @@ macro_rules! luhn_from {
 luhn_from!(usize, u8, u16, u32, u64, u128);
 
 /*
-macro_rules! luhn_from {
-    ($ty:ty) => {
-        impl Iterator for DigitIterator<$ty> {
-            type Item = u8;
-            fn next(&mut self) -> Option<Self::Item> {
-                if self.value == 0 {
-                    None
-                } else {
-                    let digit = self.value % 10;
-                    self.value /= 10;
-                    Some(digit as u8)
-                }
-            }
-        }
-        impl From<$ty> for Luhn {
-            fn from(input: $ty) -> Self {
-                Luhn {
-                    digits: Some(DigitIterator { value: input }.collect()),
-                }
-            }
-        }
-    };
-}
-
-luhn_from!(usize);
-luhn_from!(u8);
-luhn_from!(u16);
-luhn_from!(u32);
-luhn_from!(u64);
-luhn_from!(u128);
-*/
-
-/*
 /// implementation for number types, unfortunately incompatible with the &str implementation
 impl<N> From<N> for Luhn {
     fn from(input: N) -> Self {
