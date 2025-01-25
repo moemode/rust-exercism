@@ -14,5 +14,6 @@
         "rust/luhn-from/Cargo.toml",
         "rust/luhn-trait/Cargo.toml",
         "rust/clock/Cargo.toml",
+        "rust/space-age/Cargo.toml",
     ],
 }
