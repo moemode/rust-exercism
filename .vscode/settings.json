@@ -17,5 +17,10 @@
         "rust/space-age/Cargo.toml",
         "rust/sublist/Cargo.toml",
         "rust/binary-search/Cargo.toml",
+        "rust/etl/Cargo.toml",
+        "rust/grade-school/Cargo.toml",
+        "rust/hamming/Cargo.toml",
+        "rust/isogram/Cargo.toml",
+        "rust/nucleotide-count/Cargo.toml",
     ],
 }
