@@ -29,7 +29,7 @@ This repository contains my solutions to various [Exercism](https://exercism.org
 | 21 | [Isogram](./rust/isogram) | [lib.rs](./rust/isogram/src/lib.rs) | HashSet, Chars | ✅ |
 | 22 | [Nucleotide Count](./rust/nucleotide-count) | [lib.rs](./rust/nucleotide-count/src/lib.rs) | HashMap, Error handling | ✅ |
 | 23 | [Macros](./rust/macros) | [lib.rs](./rust/macros/src/lib.rs) | Macro rules, Metaprogramming | ✅ |
-| 24 | [Parallel Letter Frequency](./rust/parallel-letter-frequency) | [lib.rs](./rust/parallel-letter-frequency/src/lib.rs) | Concurrency, Threading | 🔄 |
+| 24 | [Parallel Letter Frequency](./rust/parallel-letter-frequency) | [lib.rs](./rust/parallel-letter-frequency/src/lib.rs) | Concurrency, Threading | ✅ |
 | 25 | [Xorcism](./rust/xorcism) | [lib.rs](./rust/xorcism/src/lib.rs) | Iterators, Bit manipulation | 🔄 |
 | 26 | [React](./rust/react) | [lib.rs](./rust/react/src/lib.rs) | Observer pattern, Cell types | 🔄 |
 | 27 | [Circular Buffer](./rust/circular-buffer) | [lib.rs](./rust/circular-buffer/src/lib.rs) | Ring buffer, Error handling | 🔄 |
