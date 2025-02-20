@@ -22,5 +22,7 @@
         "rust/hamming/Cargo.toml",
         "rust/isogram/Cargo.toml",
         "rust/nucleotide-count/Cargo.toml",
+        "rust/macros/Cargo.toml",
+        "rust/parallel-letter-frequency/Cargo.toml",
     ],
 }
