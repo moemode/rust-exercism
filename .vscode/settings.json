@@ -24,5 +24,6 @@
         "rust/nucleotide-count/Cargo.toml",
         "rust/macros/Cargo.toml",
         "rust/parallel-letter-frequency/Cargo.toml",
+        "rust/xorcism/Cargo.toml",
     ],
 }
